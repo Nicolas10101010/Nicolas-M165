@@ -1,0 +1,91 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram id="HONCIrl0mmIb8FsaGbNQ" name="Page-1">
+    <mxGraphModel dx="1167" dy="743" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="kurse" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=none;strokeColor=default;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="80" y="60" width="260" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="_id: ObjectId" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="2" vertex="1">
+          <mxGeometry y="30" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="name: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="2" vertex="1">
+          <mxGeometry y="54" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="dauer: int" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="2" vertex="1">
+          <mxGeometry y="78" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="max_teilnehmer: int" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="2" vertex="1">
+          <mxGeometry y="102" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="mitglied_ids: [ObjectId]" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="2" vertex="1">
+          <mxGeometry y="126" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="gerät_ids: [ObjectId]" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="2" vertex="1">
+          <mxGeometry y="150" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="trainer (embedded)" style="swimlane;fontStyle=1;align=center;startSize=28;fillColor=light-dark(#0055ff, #ededed);strokeColor=default;fontSize=12;" parent="2" vertex="1">
+          <mxGeometry x="20" y="188" width="220" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="_id: ObjectId" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="9" vertex="1">
+          <mxGeometry y="28" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="name: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="9" vertex="1">
+          <mxGeometry y="52" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="spezialgebiet: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="9" vertex="1">
+          <mxGeometry y="76" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="mitglieder" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=default;strokeColor=default;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="474" y="358" width="260" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="_id: ObjectId" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="13" vertex="1">
+          <mxGeometry y="30" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="vorname: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="13" vertex="1">
+          <mxGeometry y="54" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="nachname: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="13" vertex="1">
+          <mxGeometry y="78" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="eintrittsdatum: Date" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="13" vertex="1">
+          <mxGeometry y="102" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="kurs_ids: [ObjectId]" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="13" vertex="1">
+          <mxGeometry y="126" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="geräte" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=default;strokeColor=default;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="560" y="60" width="260" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="_id: ObjectId" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="19" vertex="1">
+          <mxGeometry y="30" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="name: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="19" vertex="1">
+          <mxGeometry y="54" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="typ: String" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="19" vertex="1">
+          <mxGeometry y="78" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="anzahl: int" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="19" vertex="1">
+          <mxGeometry y="102" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="kurs_ids: [ObjectId]" style="text;align=left;verticalAlign=middle;spacingLeft=10;" parent="19" vertex="1">
+          <mxGeometry y="126" width="260" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Referenz" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=block;endFill=1;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="8" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="222" />
+              <mxPoint x="405" y="300" />
+              <mxPoint x="604" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" value="Referenz" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=block;endFill=1;strokeColor=#b85450;" parent="1" source="8" target="19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
