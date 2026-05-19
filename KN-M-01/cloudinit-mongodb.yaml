@@ -1,0 +1,48 @@
+#cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAdbSXUd2ncHCerNpfbJ2iE5RkjOaSLIW1n642SkfYlLBQFBScMtkmHABWQ7cxZf5yw75rgwne1bt0vTr/9aPv5blLoxRqeN+hWZq0MZXYzZ1+1tCJe3wCy1aPx/HWAIEhzvuFzmCsJ4DVyFHS/YnIU6ZFdRjd2nLP1Fi5ag8eJ4eg99LOXRInIcvNR8I+kjbPvxGUSbFSeDadm5MXHEo7YFsz36KqSvKDVhflF5PNgmf2QK/huiQmFlb2H+e77S9pjeMyeIbzLxirfr0JlwsZXqIh2ozCbpM7VCDlMu07l8AVrWvBw2ArlvGubdck78enPvvvGSfaUF0M3mjL8nPHpYJhqMty5glMDx5o3SndW4B88kqavRzR8JewR2Dxqzy9qCUxGKU95NUIPoFJKZkR+ZzJZd3eOuPdnd0aukSlK0jZc+K5F+53330qI0CmtGOsYDLLGLdFL2cOO69jELchPNgSVhypP8M2Qn+AnKc9QfKxGi1YIPmaYauEProWrZU= nicol@hpNicolas
+
+ssh_pwauth: false
+disable_root: false
+package_update: true
+packages:
+  - unzip
+  - gnupg
+  - curl
+write_files:
+  - path: /home/ubuntu/mongodconfupdate.sh
+    content: |
+      sudo sed -i 's/#security:/security:\n  authorization: enabled/g' /etc/mongod.conf
+  - path: /home/ubuntu/mongodbuser.txt
+    content: |
+      use admin;
+      db.createUser(
+        {
+          user: "admin",
+          pwd: "Modul165!",
+          roles: [
+            { role: "userAdminAnyDatabase", db: "admin" },
+            { role: "readWriteAnyDatabase", db: "admin" }
+          ]
+        }
+      );
+
+runcmd:
+  - curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg --dearmor
+  - echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+  - sudo apt-get update -y
+  - sudo apt-get install -y mongodb-org
+  - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+  - sudo chmod +x /home/ubuntu/mongodconfupdate.sh
+  - sudo /home/ubuntu/mongodconfupdate.sh
+  - sudo systemctl enable mongod
+  - sudo systemctl start mongod
+  - sudo sleep 3
+  - sudo mongosh < /home/ubuntu/mongodbuser.txt
+  - sudo systemctl restart mongod
