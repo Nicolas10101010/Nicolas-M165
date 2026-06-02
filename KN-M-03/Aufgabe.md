@@ -9,7 +9,6 @@ Fügt Datensätze in alle drei Collections ein. Alle ObjectIds werden als Variab
 - Alle `_id`-Felder werden mit `ObjectId()` gesetzt, keine hartcodierten Werte
 
 ![Skript_Insert](Images/skript_insert.png)
-![Skript_Insert2](Images/skript_insert2.png)
 
 ---
 
