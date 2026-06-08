@@ -1,0 +1,10 @@
+{
+  "_id": { "$oid": "dc2e826b5444f74f1d98adfc" },
+  "name": "Kurzhantel-Set",
+  "typ": "Kraft",
+  "anzahl": 20,
+  "kurs_ids": [
+    { "$oid": "89ab0ac0e6c13f176681bf52" },
+    { "$oid": "dfb3410cae62ececb64c03dc" }
+  ]
+}

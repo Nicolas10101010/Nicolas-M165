@@ -1,0 +1,33 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "mitglieder",
+    "description": "Schema für die Collection mitglieder in der gymDB",
+    "required": ["vorname", "nachname", "eintrittsdatum"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId",
+        "description": "Eindeutige ID des Mitglieds"
+      },
+      "vorname": {
+        "bsonType": "string",
+        "description": "Vorname des Mitglieds – Pflichtfeld"
+      },
+      "nachname": {
+        "bsonType": "string",
+        "description": "Nachname des Mitglieds – Pflichtfeld"
+      },
+      "eintrittsdatum": {
+        "bsonType": "date",
+        "description": "Datum des Eintritts – Pflichtfeld"
+      },
+      "kurs_ids": {
+        "bsonType": "array",
+        "description": "Liste der ObjectIds der besuchten Kurse",
+        "items": {
+          "bsonType": "objectId"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_id": { "$oid": "f807fac6bfc3826f736862d5" },
+  "vorname": "Anna",
+  "nachname": "Bauer",
+  "eintrittsdatum": { "$date": "2023-01-15T00:00:00Z" },
+  "kurs_ids": [
+    { "$oid": "89ab0ac0e6c13f176681bf52" },
+    { "$oid": "5af863cb79e2c127710b8777" }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "kurse",
+    "description": "Schema für die Collection kurse in der gymDB",
+    "required": ["name", "dauer", "max_teilnehmer", "trainer"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId",
+        "description": "Eindeutige ID des Kurses"
+      },
+      "name": {
+        "bsonType": "string",
+        "description": "Name des Kurses – Pflichtfeld"
+      },
+      "dauer": {
+        "bsonType": "int",
+        "minimum": 1,
+        "description": "Dauer des Kurses in Minuten – Pflichtfeld"
+      },
+      "max_teilnehmer": {
+        "bsonType": "int",
+        "minimum": 1,
+        "description": "Maximale Anzahl Teilnehmer – Pflichtfeld"
+      },
+      "mitglied_ids": {
+        "bsonType": "array",
+        "description": "Liste der ObjectIds der eingeschriebenen Mitglieder",
+        "items": {
+          "bsonType": "objectId"
+        }
+      },
+      "geraet_ids": {
+        "bsonType": "array",
+        "description": "Liste der ObjectIds der verwendeten Geräte",
+        "items": {
+          "bsonType": "objectId"
+        }
+      },
+      "trainer": {
+        "bsonType": "object",
+        "description": "Eingebettetes Trainer-Objekt – Pflichtfeld",
+        "required": ["name", "spezialgebiet"],
+        "properties": {
+          "_id": {
+            "bsonType": "objectId",
+            "description": "Eindeutige ID des Trainers"
+          },
+          "name": {
+            "bsonType": "string",
+            "description": "Name des Trainers – Pflichtfeld"
+          },
+          "spezialgebiet": {
+            "bsonType": "string",
+            "description": "Spezialgebiet des Trainers – Pflichtfeld"
+          }
+        }
+      }
+    }
+  }
+}

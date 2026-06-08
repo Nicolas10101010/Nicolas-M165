@@ -1,0 +1,35 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "geraete",
+    "description": "Schema für die Collection geraete in der gymDB",
+    "required": ["name", "typ", "anzahl"],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId",
+        "description": "Eindeutige ID des Geräts"
+      },
+      "name": {
+        "bsonType": "string",
+        "description": "Name des Geräts – Pflichtfeld"
+      },
+      "typ": {
+        "bsonType": "string",
+        "enum": ["Kardio", "Kraft"],
+        "description": "Typ des Geräts, entweder Kardio oder Kraft – Pflichtfeld"
+      },
+      "anzahl": {
+        "bsonType": "int",
+        "minimum": 1,
+        "description": "Anzahl der verfügbaren Geräte – Pflichtfeld"
+      },
+      "kurs_ids": {
+        "bsonType": "array",
+        "description": "Liste der ObjectIds der Kurse die dieses Gerät verwenden",
+        "items": {
+          "bsonType": "objectId"
+        }
+      }
+    }
+  }
+}

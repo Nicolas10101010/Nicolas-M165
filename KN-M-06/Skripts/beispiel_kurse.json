@@ -1,0 +1,18 @@
+{
+  "_id": { "$oid": "89ab0ac0e6c13f176681bf52" },
+  "name": "Yoga Basics",
+  "dauer": 60,
+  "max_teilnehmer": 12,
+  "mitglied_ids": [
+    { "$oid": "f807fac6bfc3826f736862d5" },
+    { "$oid": "97d2026737b390e4752f6eba" }
+  ],
+  "geraet_ids": [
+    { "$oid": "dc2e826b5444f74f1d98adfc" }
+  ],
+  "trainer": {
+    "_id": { "$oid": "c0904d6c0feb665c50967119" },
+    "name": "Sandra Schwarz",
+    "spezialgebiet": "Yoga & Meditation"
+  }
+}
