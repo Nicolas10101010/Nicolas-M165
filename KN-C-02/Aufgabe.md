@@ -81,4 +81,5 @@ UPDATE mitglieder_by_id SET vorname = 'Klara' WHERE mitglied_id = 97d20267-37b3-
 ```
 
 ![Update Commands](Images/update_tables.png)  
+
 ![Update Resultat](Images/result.png)
