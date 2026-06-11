@@ -2,7 +2,7 @@
 
 Für diesen Teil wurde Cassandra via Docker installiert und gestartet. Nach einer kurzen Wartezeit für das Hochfahren der Datenbank konnte ich mich erfolgreich mit `cqlsh` verbinden.
 
-![Cassandra Login](images/cassandra_login.png)
+![Cassandra Login](Images/cassandra_login.png)
 
 ---
 
@@ -10,7 +10,7 @@ Für diesen Teil wurde Cassandra via Docker installiert und gestartet. Nach eine
 
 Für unser Gym-Datenmodell (basierend auf Kursen, Mitgliedern und Geräten aus den vorherigen MongoDB-Aufträgen) wurden die folgenden drei Haupt-Screens definiert. Da Cassandra abfrageorientiert ist (Query-Driven Data Modeling), wird für jeden Screen eine massgeschneiderte Tabelle erstellt.
 
-![Logisches Modell Tabellen](images/tables.png)
+![Logisches Modell Tabellen](Images/tables.png)
 
 ### Erklärung der Abläufe, Szenarien und Screens
 
