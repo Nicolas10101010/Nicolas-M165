@@ -81,3 +81,4 @@ CREATE TABLE IF NOT EXISTS details_by_kurs (
     PRIMARY KEY ((kurs_id), mitglied_id)
 ) WITH CLUSTERING ORDER BY (mitglied_id ASC);
 ```
+![Logisches Modell Tabellen](Images/describe_tables.png)
