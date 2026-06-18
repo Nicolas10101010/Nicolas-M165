@@ -1,0 +1,11 @@
+-- Szenario 1: Knoten filtern (Wer hat Yoga gebucht?)
+MATCH (m:Mitglied)-[:BUCHT]->(k:Kurs) WHERE k.name = 'Yoga' RETURN m.vorname, m.nachname;
+
+-- Szenario 2: Kanten filtern (Wer hat am 2023-10-01 gebucht?)
+MATCH (m:Mitglied)-[b:BUCHT]->(k:Kurs) WHERE b.buchungsdatum = '2023-10-01' RETURN m.vorname, k.name;
+
+-- Szenario 3: Tiefe Verkettung (Welche Geräte braucht Trainer Meier?)
+MATCH (t:Trainer {name: 'Meier'})-[:LEITET]->(k:Kurs)-[:BENOETIGT]->(g:Geraet) RETURN g.name, g.anzahl;
+
+-- Szenario 4: Komplettes Netzwerk von Mitglied Anna
+MATCH (m:Mitglied {vorname: 'Anna'})-[:BUCHT]->(k:Kurs), (t:Trainer)-[:LEITET]->(k), (k)-[:BENOETIGT]->(g:Geraet) RETURN m, k, t, g;

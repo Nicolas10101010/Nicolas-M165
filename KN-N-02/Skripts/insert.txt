@@ -1,0 +1,34 @@
+CREATE
+  // Knoten: Mitglieder
+  (m1:Mitglied {vorname: 'Anna', nachname: 'Müller', eintrittsdatum: '2023-01-15'}),
+  (m2:Mitglied {vorname: 'Ben', nachname: 'Schmid', eintrittsdatum: '2023-03-20'}),
+  (m3:Mitglied {vorname: 'Clara', nachname: 'Weber', eintrittsdatum: '2023-06-10'}),
+  
+  // Knoten: Kurse
+  (k1:Kurs {name: 'Yoga', dauer: 60, max_teilnehmer: 15}),
+  (k2:Kurs {name: 'Crossfit', dauer: 45, max_teilnehmer: 10}),
+  (k3:Kurs {name: 'Pilates', dauer: 55, max_teilnehmer: 12}),
+  
+  // Knoten: Trainer
+  (t1:Trainer {name: 'Schwarz', spezialgebiet: 'Entspannung'}),
+  (t2:Trainer {name: 'Meier', spezialgebiet: 'Kraft'}),
+  (t3:Trainer {name: 'Keller', spezialgebiet: 'Ausdauer'}),
+  
+  // Knoten: Geräte
+  (g1:Geraet {name: 'Matte', typ: 'Boden', anzahl: 20}),
+  (g2:Geraet {name: 'Kettlebell', typ: 'Gewicht', anzahl: 15}),
+  (g3:Geraet {name: 'Springseil', typ: 'Cardio', anzahl: 10}),
+  
+  // Kanten (Relationships) erstellen
+  (m1)-[:BUCHT {buchungsdatum: '2023-10-01'}]->(k1),
+  (m1)-[:BUCHT {buchungsdatum: '2023-10-02'}]->(k2),
+  (m2)-[:BUCHT {buchungsdatum: '2023-10-01'}]->(k1),
+  (m3)-[:BUCHT {buchungsdatum: '2023-10-03'}]->(k3),
+  
+  (t1)-[:LEITET]->(k1),
+  (t2)-[:LEITET]->(k2),
+  (t3)-[:LEITET]->(k3),
+  
+  (k1)-[:BENOETIGT]->(g1),
+  (k2)-[:BENOETIGT]->(g2),
+  (k3)-[:BENOETIGT]->(g1)

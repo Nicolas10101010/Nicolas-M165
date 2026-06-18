@@ -1,0 +1,5 @@
+-- Klausel 1: ORDER BY / LIMIT (Top 2 längste Kurse)
+MATCH (k:Kurs) RETURN k.name, k.dauer ORDER BY k.dauer DESC LIMIT 2;
+
+-- Klausel 2: WITH (Zählen der Kurse pro Mitglied)
+MATCH (m:Mitglied)-[:BUCHT]->(k:Kurs) WITH m, count(k) AS anzahlKurse RETURN m.vorname, anzahlKurse;

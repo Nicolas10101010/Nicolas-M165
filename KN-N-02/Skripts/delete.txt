@@ -1,0 +1,8 @@
+-- 1. Testdaten erstellen
+CREATE (t:Trainer {name: 'TestTrainer'})-[:LEITET]->(k:Kurs {name: 'TestKurs'});
+
+-- 2. Versuch ohne DETACH (Erzeugt Fehler wegen Orphan Relationships)
+MATCH (k:Kurs {name: 'TestKurs'}) DELETE k;
+
+-- 3. Versuch mit DETACH (Funktioniert korrekt)
+MATCH (k:Kurs {name: 'TestKurs'}) DETACH DELETE k;

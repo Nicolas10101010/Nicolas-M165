@@ -1,0 +1,8 @@
+-- Szenario 1: Knoten-Attribut ändern
+MATCH (m:Mitglied {vorname: 'Clara'}) SET m.eintrittsdatum = '2023-06-15' RETURN m;
+
+-- Szenario 2: Kanten-Attribut ändern
+MATCH (m:Mitglied {vorname: 'Ben'})-[b:BUCHT]->(k:Kurs {name: 'Yoga'}) SET b.buchungsdatum = '2023-10-05' RETURN b;
+
+-- Szenario 3: Neue Kante (Relationship) erstellen
+MATCH (m:Mitglied {vorname: 'Anna'}), (k:Kurs {name: 'Pilates'}) CREATE (m)-[:BUCHT {buchungsdatum: '2023-10-10'}]->(k) RETURN m, k;
