@@ -1,25 +1,17 @@
-# Drehbuch: KN-N-03 - Python und Neo4j AuraDB
+# Gym-DB: Neo4j & Python Integration (KN-N-03)
 
-## Ausgangslage
+Dieses Projekt demonstriert die Anbindung einer Neo4j Graphdatenbank (AuraDB Cloud) an ein lokales Python-Skript. Es liest Daten über Mitglieder und deren belegte Kurse aus einem fiktiven Fitnessstudio aus.
 
-Das Ziel dieses Moduls ist es, über ein Python-Skript eine Verbindung zu einer cloudbasierten Graphdatenbank (Neo4j AuraDB) herzustellen. Die in der Datenbank gespeicherten Knoten (Gym-Mitglieder und Kurse) sollen über Python mit einer Cypher-Abfrage ausgelesen und im Terminal ausgegeben werden.
+## Voraussetzungen
 
-## 1. Vorbereitung der Datenbank
+- Python 3.x installiert
+- Aktive Neo4j AuraDB Instanz (Cloud)
+- Installierter Neo4j Python-Treiber
 
-1. Erstellung einer Neo4j AuraDB (Free Tier) Instanz.
-2. Das `insert_skript.txt` (KN-M-02) wurde über den Neo4j Browser (Query-Tab) ausgeführt, um die Datenbank mit den Testdaten (Mitglieder wie Anna, Ben, Clara und die entsprechenden Kurse) zu füllen.
+## Installation
 
-## 2. Python-Umgebung einrichten
+Um den benötigten Treiber zu installieren, führe folgenden Befehl im Terminal aus:
 
-Damit Python mit Neo4j kommunizieren kann, wurde der offizielle Treiber über das Terminal installiert:
-`pip install neo4j`
-
-## 3. Das Python-Skript (`neo4j_gymdb.py`)
-
-Das Skript baut eine sichere Verbindung zur Cloud-Datenbank auf und führt einen `MATCH`-Befehl aus, um die Mitglieder auszulesen.
-
-## 4. Ausführung und Ergebnis
-
-Das Skript wurde über das Terminal mit `python neo4j_gymdb.py` ausgeführt.
-Die Verbindung wurde erfolgreich hergestellt und die Daten der Gym-Mitglieder wurden im Terminal ausgegeben.
-Der Nachweis der erfolgreichen Ausführung ist im Screenshot `skript_ausführen.png` dokumentiert.
+```bash
+pip install neo4j
+```
