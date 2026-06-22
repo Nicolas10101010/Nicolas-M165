@@ -15,3 +15,4 @@ Um den benötigten Treiber zu installieren, führe folgenden Befehl im Terminal 
 ```bash
 pip install neo4j
 ```
+![Skript Ausgabe](Images/skript_ausführen.png)
